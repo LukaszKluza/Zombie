@@ -1,0 +1,60 @@
+body {
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  background-color: rgb(157, 12, 126);
+  cursor: url('aim5.png'), pointer;
+  }
+  
+  .bg {
+    width: 100%;
+    height: 80vh;
+    background-image: url('/img/board-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    position: relative;
+  }
+
+  #start-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 10%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+}
+  
+  .zombie {
+    width: 200px;
+    height: 312px;
+    position: absolute; 
+    left: 88%;
+    top: 50%;
+    background-image: url('/img/walkingdead.png');
+    animation: characterAnimation 1s steps(10) infinite, characterMove 10s linear;
+    background-repeat: no-repeat;
+  }
+
+  
+  @keyframes characterAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2000px 0;
+    }
+  }
+  
+@keyframes characterMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3000px);
+  }
+}
+
+  
+    
