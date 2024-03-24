@@ -1,15 +1,22 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"> 
-    <title>Zombiee game</title>
+    <meta charset="UTF-8"> 
+    <title>Zombie Game</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="bg">
-        <div class ="aim" id="aim"></div>
-        <button type="button" id="start-button" onclick="startGame()">Rozpocznij Grę!</button>
+        <div id="score"></div>
+        <div class="aim" id="aim"></div>
+        <div id="lifes"></div>
     </div>
-
-    <div id="score"></div>
+    <div class="overlay" id="overlay">
+        <div class="message" id = "message">
+            <p id="menuText">Zombie Game!</p>
+            <button type="button" id="start-button" class="start-button" onclick="startGame()">PLAY</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
+</html>

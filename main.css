@@ -3,56 +3,154 @@ body {
   margin-top: 10vh;
   margin-left: 10vw;
   margin-right: 10vw;
-  background-color: rgb(157, 12, 126);
-  cursor: url('aim5.png'), pointer;
-  }
-  
-  .bg {
-    width: 100%;
-    height: 80vh;
-    background-image: url('/img/board-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center center;
-    position: relative;
-  }
-
-  #start-button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 10%;
-    width: 20%;
-    transform: translate(-50%, -50%);
+  background: rgb(230,63,251);
+  background: radial-gradient(circle, rgba(230,63,251,1) 0%, rgba(184,32,119,1) 100%);
+  cursor: url('img/aim2.png') 30 30, pointer;
 }
   
-  .zombie {
-    width: 200px;
-    height: 312px;
-    position: absolute; 
-    left: 88%;
-    top: 50%;
-    background-image: url('/img/walkingdead.png');
-    animation: characterAnimation 1s steps(10) infinite, characterMove 10s linear;
-    background-repeat: no-repeat;
-  }
+.bg {
+  width: 100%;
+  height: 80vh;
+  background-image: url('img/board-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  position: relative;
+}
 
+#start-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 10%;
+  width: 20%;
+  transform: translate(-50%, -50%);
+}
+
+#score{
+  color: azure;
+  font-size: 40px;
+  position: relative;
+  width: 120px;
+  height: 40px;
+  left: 85%;
+  top: 5%;
+  text-align: right;
+}
+
+#lifes{
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
   
-  @keyframes characterAnimation {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: -2000px 0;
-    }
-  }
+.heart{
+  padding: 5px;
+}
+.zombie {
+  width: 200px;
+  height: 312px;
+  position: absolute; 
+  background-image: url('img/walkingdead.png');
+  animation: characterAnimation 1s steps(10) infinite; 
+  background-repeat: no-repeat;
+}
   
-@keyframes characterMove {
+@keyframes characterAnimation {
   0% {
-    transform: translateX(0);
+    background-position: 0 0;
   }
   100% {
-    transform: translateX(-3000px);
+    background-position: -2000px 0;
+  }
+}
+
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 196, 241, 0.684);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; 
+  cursor: pointer;
+}
+
+#message {
+  color: #fff;
+  background-color: #9d6292;
+  background-color: #645c61;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  width: 60%; 
+  height: 40%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  top: 63%; 
+  left: 50%;
+  transform: translate(-50%, -80%); 
+}
+
+#menuText {
+  margin-bottom: 20%; 
+  font-size: 40px;
+}
+
+.start-button {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid #495057;
+  color: #495057;
+}
+
+.start-button:hover {
+  color: #fff;
+}
+.start-button:hover:after {
+  height: 100%;
+}
+.start-button:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background: #495057;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
